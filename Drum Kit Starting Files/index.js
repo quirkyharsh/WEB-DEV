@@ -4,7 +4,17 @@ for (var i = 0; i < document.querySelectorAll("button").length; i++){
     
     var buttoninnerHTML = this.innerHTML;
     
-    switch (buttoninnerHTML) {
+    makesound(buttoninnerHTML);
+    
+});
+}
+
+document.addEventListener("keypress", function() {
+    makesound(event.key);
+})
+
+function makesound(key){
+    switch (key) {
         case "w":
             var audio = new Audio("sounds/tom-1.mp3");
             audio.play();
@@ -34,7 +44,4 @@ for (var i = 0; i < document.querySelectorAll("button").length; i++){
             audio.play();
             break;
     }
-});
 }
-
-
